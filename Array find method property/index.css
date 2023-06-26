@@ -1,0 +1,10 @@
+body {
+   background-color: rgb(153, 147, 222); 
+   color: chartreuse;
+}
+h1 {
+   text-align: center;
+}
+h2, p {
+   font-size: x-large;
+}

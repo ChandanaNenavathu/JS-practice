@@ -1,0 +1,10 @@
+body {
+   background-color: rgb(103, 2, 51); 
+   color: tomato;
+}
+h1 {
+   text-align: center;
+}
+h2, p {
+   font-size: x-large;
+}
