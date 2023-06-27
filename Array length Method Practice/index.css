@@ -1,0 +1,16 @@
+body {
+   background-color: rgb(16, 42, 235); 
+   color: rgb(248, 232, 0);
+}
+.heading {
+   text-align: center;
+   color: whitesmoke;
+}
+.arr {
+   font-size: larger;
+   color :snow
+}
+.Arr {
+   color :greenyellow;
+   font-size: large;
+}
