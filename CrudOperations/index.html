@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Operations</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onFormSubmit()">
+                    <div>
+                        <label for="productCode">Product Code </label>
+                        <input type="text" name="productCode" class="productCode">
+                    </div>
+                    <div>
+                        <label for="product">Product </label>
+                        <input type="text" name="product" class="product">
+                    </div>
+                    <div>
+                        <label for="qty">Qty</label>
+                        <input type="number" name="qty" class="qty">
+                    </div>
+                    <div>
+                        <label for="perPrice">Price</label>
+                        <input type="number" name="perPrice" class="perPrice">
+                    </div>
+                    <div class="formActionButton">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+
+                    </div>
+                </form>
+                    <td>
+                        <table class="list" id="StoreList">
+                            <thead>
+                                <tr>
+                                    <th>Product Code</th>
+                                    <th>Product</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </td>
+            </td>
+        </tr>
+   </table>
+    <script src="./index.js"></script>
+</body>
+</html>
