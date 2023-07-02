@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array push</title>
+</head>
+<body>
+   <script>
+   // 1) Using the array push() to append one element to an array1) Using the array push() to append one element to an array
+
+    let numbers = [10,20,30];
+    const length = numbers.push(40);
+    console.log(length);
+    console.log(numbers);
+
+    // 2) 2) Using the array push() to add multiple elements to the end of an array
+
+    let number = [10,20,30];
+    const len = number.push(40,50);
+    console.log(len);
+    console.log(number);
+
+    // 3) Using the push() to append elements of an array to another array
+
+    let color = ['red', 'green', 'blue'];
+    let cmyk = ['cyan', 'magenta', 'yellow', 'back'];
+    for(const add of cmyk){
+        color.push(add);
+    };
+    console.log(color)
+
+    // by using spread Operator(...)
+
+    let colors = ['red', 'green', 'blue'];
+    let cmyks = ['cyan', 'magenta', 'yellow', 'back'];
+    colors.push(...cmyks);
+    console.log(colors);
+
+    // JavaScript Array push() method with array-like objects
+
+    let greetings = {
+        0: 'Hi',
+        1: "Hello",
+        length:2,
+        adds(message){
+        [].push.call(this,messaage);
+        },
+    };
+    console.log(greetings);
+    greetings.adds('Howdy');
+
+
+   </script>
+</body>
+</html>

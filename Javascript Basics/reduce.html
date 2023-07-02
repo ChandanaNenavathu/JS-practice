@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce</title>
+</head>
+<body>
+   <script>
+    
+    // Array reduce() method
+
+    let numbers = [1, 2, 3];
+    let sum = 0;
+    for (let i = 0; i <numbers.length; i++){
+        sum+=numbers[i];
+    }
+    console.log(sum)
+
+    // another method
+
+    let number = [1, 2, 3];
+    let sums = number.reduce(function(acc, cur){
+        return acc + cur;
+    });
+    console.log(sums);
+
+    // 
+    let shoppingCart = [
+        {
+            product : 'phone',
+            qty : 1 ,
+            price : 500,
+        },
+        {
+            product : 'Screen protector',
+            qty : 1 ,
+            price : 10,
+        },
+        {
+            product : 'Memory Card',
+            qty : 2 , 
+            price : 20,
+        },
+    ];
+
+    let total = shoppingCart.reduce(function (previousValue, currentValue){
+        return previousValue + currentValue.qty * currentValue.price;
+    },0);
+    console.log(total);
+
+    // Array reduceRight() method
+    
+    let nobs = [1,2,3];
+    let add = nobs.reduceRight(function(firstValue, secondValue){
+        console.log({firstValue, secondValue})
+        return firstValue + secondValue;
+    });
+    console.log(`Result:${add}`);
+
+
+
+   </script>
+</body>
+</html>

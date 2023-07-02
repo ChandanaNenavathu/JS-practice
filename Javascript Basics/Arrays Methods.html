@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY METHODS</title>
+</head>
+<body>
+   
+    <script>
+        // 1. changing an array element
+        let cars = ["saab", "volvo", "BMW"];
+        cars[2] = "opel";
+        console.log(cars[2]);
+
+        //2. Access the first Array
+        let fruits = ["Apple", "orange", "mango"];
+        console.log(fruits[2]);
+
+        //3. Accessing the Last Array Element
+        let subjects = ["Maths", "Science", "Physics", "Biology"];
+        console.log(subjects[subjects.length-3]);
+
+        // //4. Looping Array Elements
+        // const fruit = ["Banana", "Orange", "Apple", "Mango"];
+        // for (let i=0;i<=4;i++) {
+        //     fruit[i];
+        // }
+
+        // 5.a] Adding Array Elements
+        let ff = ["Banana", "Orange", "Apple"];
+        ff.push("lemon");
+        console.log(ff);
+
+        // 5.b] Adding Array Elements length property
+        let fff = ["Banana", "Orange", "Apple", "Pear"];
+        fff[fff.length]= "lemon";
+        console.log(fff);
+    
+        // 6.a] Converting Arrays to Strings
+        const names = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(names.toString());
+
+        //6. b] join() method also joins all array elements into a string
+
+        const name = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(name.join("+"));
+        console.log(name.join("*"));
+
+        // Popping and Pushing
+
+        //7. Array pop() method removes the last element from an array
+
+        const chh = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(chh.pop());
+
+        //8. Array push() method adds a new element to an array (at the end):
+
+        const are = ["kind", "worthy", "polite", "absolute", "quiet"];
+        const total = are.push("accompanied");// CAN ALSO BE USED WITH ARRAY LENGTH
+        console.log("sum = " , total);
+        console.log("sum = " , are);
+
+        //9. Shifting Elements : Shifting is equivalent to popping, but working on the first element instead of the last.
+
+        // Array shift()
+        
+        const animals = ["pigs", "goats", "sheep", "cows", "chickens"];
+        const firstelement = animals.shift();
+        console.log(animals);
+
+        // Array unshift()
+         
+        const ARR = ["Banana", "Orange", "Apple", "Mango"];
+        const arR = ARR.unshift("LEMON");
+        console.log(ARR);
+
+        // 10. Merging (Concatenating) Arrays
+         
+        // (Merging Two Arrays)
+
+        const girls = ["Chandu", "Chandana"];
+        const boys = ["Harish", "Kumar", "Pendem"];
+        const children = girls.concat(boys);
+        console.log(children);
+
+        // (Merging Three Arrays)
+
+        const arr1 = ["The", "unshift() method"];
+        const arr2 = ["adds", "one", "or"];
+        const arr3 = ["more", "elements"];
+        const A123 = arr1.concat(arr2,arr3);
+        console.log(A123);
+
+        // (Merging an Array with Values)
+         
+        const length = ["chh", "har", "pen"];
+        const totals = length.concat("kum");
+        console.log(totals);
+
+        // 11 a]. Array splice() splice() method can be used to add new items to an array
+
+        const colours = ["Black", "Orange", "purple", "Blue"];
+        colours.splice(2,0,"White", "Red");
+        console.log(colours);
+
+        //b]. The splice() method returns an array with the deleted items
+
+        const flowers = ["Rose", "lilly", "Sunflower", "Lotus",];
+        flowers.splice(2,2,"Marigold","Chrysanthemum");
+        console.log(flowers);
+
+        //c] Using splice() to Remove Elements
+
+        const rivers = ["ganga","yamuna", "cauvery","narmada"];
+        rivers.splice(0,1,);
+        console.log(rivers);
+
+        //d] Array slice()
+
+        const citrus = ["lemon", "orange", "grapes"];
+        citrus.splice(2);
+        console.log(citrus);
+
+        // 12. Automatic toString()
+
+        const people = ["man", "women", "child", "girl","boy",];
+        console.log(people.toString());
+ //       console.log(people);
+
+        // 
+
+
+
+
+
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

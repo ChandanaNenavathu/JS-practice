@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Manipulation</title>
+    <style>
+        nav {
+            background-color: crimson;
+            color: azure;
+            font-size: 30px;
+            padding: 6px;
+        }
+        nav a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">JS DOM Intro</a>
+    </nav>
+
+    <Div>
+        <h1 id="msg">Good Morning</h1>
+    </div>
+
+   <script>
+        // document
+        console.log(document);
+        // head
+        console.log(document.head);
+        // body
+        console.log(document.body);
+        // title
+        console.log(document.title);
+        // to change title
+        document.title = 'DOM'
+        // Nav
+        let navTag = document.querySelector('nav');
+        console.log(navTag);
+        // anchor tag
+        let anchorTag = document.querySelector('nav a');
+        console.log(anchorTag);
+        //inner text 
+        let theText = anchorTag.innerText;
+        console.log(theText);
+        // change the innertext
+        anchorTag.innerText = 'Chandana Nenavathu'
+        // h1 Tag
+        let h1Tag = document.querySelector('#msg');
+        h1Tag.innerText= 'Good Evening'
+        // styles
+        h1Tag.style.backgroundColor = 'Limegreen';
+        h1Tag.style.color ='white';
+        h1Tag.style.padding = "15px";
+        h1Tag.style.textAlign = 'Center';
+        h1Tag.style.fontSize = "40px";
+        h1Tag.style.boxShadow = "0 0 10px black";
+
+        
+
+   </script>
+</body>
+</html>

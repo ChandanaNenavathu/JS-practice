@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to functions</title>
+</head>
+<body>
+   
+    <script>
+
+        // PRINT FROM 0 TO 10 diff
+
+        // declaration of function
+
+        function printNumbers () {
+            let result = "";
+        for(let i=0; i<=10 ; i++){
+            result += `${i} `;
+        }
+            console.log(result);
+
+        }
+        printNumbers();//function call/execution
+        printNumbers();
+
+        // example 2 we can modify the way we like by adding parameters to it
+
+        function printNumber (endNumber) {
+            let result = "";
+        for(let i=0; i<=endNumber ; i++){
+            result += `${i} `;
+        }
+            console.log(result);
+
+        }
+        printNumber(50);
+        
+        printNumber(100);
+ 
+        // example 3
+        
+        function f (startNumber, endNumber) {
+            let result = "";
+        for(let i=startNumber; i<=endNumber ; i++){
+            result += `${i} `;
+        }
+            console.log(result);
+
+        }
+        f(10,50);
+        f(50, 100);
+
+        // example 3
+        
+        function incre (startNumber, endNumber, increment) {
+            let result = "";
+        for(let i=startNumber; i<=endNumber ; i+= increment){
+            result += `${i} `;
+        }
+            console.log(result);
+
+        }
+        incre(10,50, 5);
+        incre(50, 100, 10);
+    
+        
+
+    
+    </script>
+</body>
+</html>

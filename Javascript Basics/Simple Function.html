@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Funtions</title>
+</head>
+<body>
+   
+    <SCRIPT>
+
+        // Function without parameters
+
+        function greet(){
+            console.log("Good Morning");
+        }
+        greet();
+
+        // Function Expression
+
+        let greetName = function(){
+            console.log("Good Morning");
+        };
+        console.log(greetName)
+        greetName();
+
+        //Function with parameters without return type
+
+        let wishMe = function(name, age) {
+            let message = ` hello ${name} you are ${age} yrs old`;
+            console.log(message);
+        };
+        wishMe("John", 32);
+
+        // Function with return type
+
+        let sum = function(a,b) {
+            let result = 2*(a+b);
+            return result;
+        }
+        let output = sum(10,20);
+        console.log(output);
+
+        
+
+    </SCRIPT>
+</body>
+</html>

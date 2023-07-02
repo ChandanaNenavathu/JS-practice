@@ -1,0 +1,5 @@
+numArr.map((value, index) => {
+	return 
+})
+
+

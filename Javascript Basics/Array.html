@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+
+    <script>
+
+         // Array is an indexed collection of elements(string, boolean, number ---etc)
+        
+         // 0 is index 
+
+         // creation of array
+          
+          let numbers = [10, 20, 30];
+            console.log(numbers);
+
+        // access the elements of array
+        
+            console.log(numbers[0]);
+
+        // access the non-existing elements of array
+        
+            console.log(numbers[3]);// undefined
+
+        // iteration of array elements
+
+        let colors = ["white","Black", "silver", "blue", "green", "purple", "yellow"];
+         
+        // 1. normal for-loop
+
+        result = "" ;
+        for(let i = 0; i<=colors.length-1; i++){
+            result +=`${colors[i]} `;
+        }
+
+        console.log(result);
+
+        // Array of objects
+
+        let employees = [
+            {
+                id : 1,
+                name : "john",
+                age : 40,
+                designation : "Manager",
+                isActive : true
+            },
+            {
+                id : 2,
+                name : "joe",
+                age : 46,
+                designation : "Sr. Manager",
+                isActive : true
+            },
+            {
+                id : 3,
+                name : "joy",
+                age : 25,
+                designation : "Software",
+                isActive : true
+            },
+            {
+                id : 4,
+                name : "johnny",
+                age : 28,
+                designation : "tech lead",
+                isActive : false
+            },
+            {
+                id : 5,
+                name : "jo",
+                age : 26,
+                designation : "Software",
+                isActive : true
+            }
+
+        ];
+
+        // acess all employees
+
+        console.log(employees);
+
+        // iterate employees
+
+            result =``;
+        for (let employee of employees){
+            result += `${employee.name} `;
+        }
+        console.log (result);
+
+        // filter the junior employees
+
+        
+
+
+
+
+
+
+        
+         
+
+         
+
+    </script>
+   
+</body>
+</html>

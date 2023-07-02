@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Questions</title>
+</head>
+<body>
+   <script>
+    
+    // 1. ADDITION OF 2 NUMBERS
+    const num1 = 10;
+    const num2 = 15;
+    const sum = num1+num2;
+    console.log("The sum of" + num1 + "and"+ num2 + "is"+ sum );
+
+    //2. Multiplication Table 7
+    // for loop syntax
+    /* for (let i = 0; i < 10; i++) {
+            text += "The number is " + i + "<br>";
+        }
+    */
+    const n=7;
+    for (let i=1; i<=10; i++){
+        console.log ( n+"*" + i + "=" + n * i);
+    }
+
+    //3. How to find length of an array
+    // syntax is : array.length
+
+    let colors = ["red", "blue", "green", "orange", "yellow"];
+    console.log(colors.length);
+
+    let fruits = ["Banana", "Orange", "Apple", "Mango"]
+    console.log(fruits);
+
+    //4. How to remove element from array
+
+    /*  
+        pop - Removes from the End of an Array
+        shift - Removes from the beginning of an Array
+    */
+
+    let array = [1,2,3,4,5,6,7,8];
+    array.pop();//returns 8
+    console.log(array);//[1,2,3,4,5,6,7,]
+   
+    let arr = ["zero","one","two","three"];
+    arr.shift();//Returns zero
+    console.log(arr);// ["one","two","three"
+
+
+
+
+    //5. How to add 1 element to an array
+
+    // Use the map() method to increment the values in an array, e.g. arr.map(num => num + 1
+     
+    const Numbers = [1,2,3,4,5,6]
+    
+    //Increment all values (new array)
+
+    const newNumbers= Numbers.map(num => num+1)
+    console.log(newNumbers);
+
+    // Increment single value (in place)
+ 
+    Numbers[0]+=1;
+    console.log(Numbers[0]);
+    Numbers[0]+=3;
+    console.log(Numbers[0]);
+
+  // 6. how to find big element in array with 3 methods
+
+    // 1. with a FOR loop
+    // 2. using the reduce() method
+    // 3. using Math.max()
+   
+    const bigelement = [1,2,3,4];
+    Math.max(...bigelement);
+    console.log(bigelement);
+
+  // 7. How to find small element in an array
+   
+    const smallelement =[14,17,20,55,75,23,83,3,72]
+    const min = Math.min(...smallelement);
+    console.log(min);
+
+  // 8. How to sort ascending order of an array
+    
+    const items = ["apple","car", "van", "scooty"]
+    items.sort();
+    console.log(items);
+
+    const months = ['March', 'Jan', 'Feb', 'Dec'];
+    months.sort();
+    console.log(months);
+  
+
+   </script>
+</body>
+</html>

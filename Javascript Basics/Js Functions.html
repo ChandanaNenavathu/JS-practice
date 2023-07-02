@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    
+   <script>
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // Returning a value
+    
+    function say (message){
+        console.log(message);
+    }
+    let result = say('Hello');
+    console.log('Result:', result)
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    function add(a, b){
+        return a+b;
+    }
+    let sum = add(10, 20);
+    console.log("sum:", sum);
+
+    function add(){
+        let sum = 0;
+        for(let i = 0; i<arguments.length; i++){
+            sum += arguments[i];
+        }
+        return sum;
+    };
+
+    console.log(add(1, 2));
+    console.log(add(1, 2, 3, 4, 5, 6));
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    // Returning functions from functions
+    // Array of Products that have 2 properties : name and price
+    
+    function compareBy(propertyName){
+        return function (a,b){
+            let x = a[propertyName],
+            y = b[propertyName];
+
+            if (x>y){
+                return 1;
+            } else if (x<y){
+                return -1;
+            } else {
+                return 0;
+            }
+        };
+    }
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+     let products = [
+        {name : 'iphone', price: 900},
+        {name : 'Samsung Galaxy', price: 850},
+        {name : 'Sony Xperia', price: 700},
+
+     ];
+      console.table(products);
+      products.sort(compareBy('name'));
+      console.table(products);
+      console.log('Products sorted by price');
+      products.sort(compareBy('price'));
+      console.table(products);
+    
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    // JavaScript Anonymous Functions
+     
+    // An anonymous function is a function without a name
+
+    let show = function(){
+        console.log('Anonymous function');
+    };
+    show();
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    // Using anonymous functions as arguments
+
+    setTimeout(function(){
+        console.log("execute later after 1 second")
+    }, 1000);
+
+    (function () {
+        console.log('Immediately invoked function execution');
+    })();
+
+    let person = {
+        firstName: 'John',
+        lastName: 'Doe'
+    };
+    (function(){
+        console.log(person.firstName + ''+ person.lastName);
+    })(person);
+    
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    // Arrow functions 
+    // it is short hand for declaring Anonymous functions
+
+
+        let shows = function() {
+            console.log('Anonymous function');
+        };
+        // can be shortened using arrow function:
+
+        let showss = () => console.log('Anonymous function')();
+
+        let adds = function(a,b){
+            return a+b;
+        };// let adds = (a,b) => a+b;
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        // javascript Pass-By-Value
+        
+        // Pass-by-value of primitives values
+
+        function square(x){
+            x = x*x;
+            return x;
+        }
+        let y = 10;
+        let results = square(y);
+        console.log(y);
+        console.log(results);
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        //Pass-by-value of reference values
+
+        let persons = {
+            name: 'John',
+            age: 25,
+        };
+
+        function increaseAge(obj) {
+            obj.age += 1;
+        }
+
+            increaseAge(persons);
+
+            console.log(persons);
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        // Recursive Function
+
+        function recurse() {
+        // ...
+                recurse();
+        // ...
+        }
+
+        // program to count down numbers to 1
+            
+            function countDown(number) {
+
+        // display the number
+            console.log(number);
+
+        let nextNumber = number - 1;
+        if(nextNumber > 0) {
+            countDown(nextNumber);
+        }
+
+        };
+        countDown(5);
+
+
+       function cmToIn(length) {
+  return length / 2.54;
+}
+
+function inToCm(length) {
+  return length * 2.54;
+}
+
+function convert(fn, length) {
+  return fn(length);
+}
+
+let inches = convert(cmToIn, 10);
+console.log(inches);
+
+let cm = convert(inToCm, 10);
+console.log(cm); 
+ 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// passing undefined arguments
+
+function createDiv(height = '100px', width = '100px', border = 'solid 1px red'){
+    let div = document.createElement('div');
+    dic.style.height = height;
+    dic.style.width = width;
+    dic.style.border = border;
+    document.body.appendChild(div);
+    return div
+}
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// Evaluating default parameters
+
+function put(toy, toyBox = []) {
+    toyBox.push(toy);
+    return toyBox;
+}
+console.log(put('Toy Car'));
+console.log(put('Teddy Bear'));
+
+// ----------------------------------------------------------------
+
+function date(d = today()){
+    console.log(d)
+}
+function today(){
+    return (new Date()).toLocaleDateString('en-US');
+}
+date();
+
+//-----------------------------------------------------------------------------------------
+
+//  Using other parameters in default values
+
+
+function add(x = 1, y = x, z = x + y) {
+    return x + y + z;
+}
+console.log(add())
+
+//---------------------------------------------------------
+
+// using function as default value for parameter
+
+let taxRate = () => 0.2;
+let getPrice = function(price, tax = price * taxRate()){
+    return price + tax;
+}
+let fullprice = getPrice(100)
+console.log(fullprice);
+
+
+
+
+
+
+
+   </script>
+</body>
+</html>

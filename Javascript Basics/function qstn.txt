@@ -1,0 +1,6 @@
+1. create array of stings ['a', 'b', 'a'] [1,2,4,3,2]----> remove duplicated from array.(filter)
+2. add 5 to all the elements in the array.(map)
+3. [4,64,5,3,6,6,4,9,2,8] find the smallest even number.(filter)
+4. [5,6,3,5,,,6,6,6,6,6] find the numbers which are divisble by 3.(filter)
+5. [121, 4, 9, 64] sqrt of number.
+6. ['hello', 'chalo', 'bolo', 'apple', 'apply', 'append'] sort.

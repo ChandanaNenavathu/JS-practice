@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every</title>
+</head>
+<body>
+   <script>
+    // Introduction to JavaScript Array every() method
+
+    // ES5 every()
+
+    let numbers = [1, 2, 3];
+    let result = numbers.every(function(x){
+        return x>0;
+    });
+    console.log(result);
+
+    // above same prblm using ES6 arrow functions
+
+    let number = [1, 2, 3];
+    let results = number.every(y => y > 0);
+    console.log(results);
+
+    // tests whether all the array elements are the even numbers
+
+    let arr = [1, 3, 2, 6];
+    let Even = arr.every(function(x){
+        return x % 2 == 0;
+    });
+    console.log(Even);
+    
+    // tests if all the array elements are the odd numbers.
+
+    let array = [1,3,5];
+    let Odd = array.every(n => n % 2 == 1);
+    // let Odd = array.every(function(n){
+    // return Math.abs(n % 2) == 1;
+    //})
+    console.log(Odd);
+
+    // Caution: Empty arrays
+    // If you call the every() method on an empty array, the method will always return true for any condition. For example:
+
+    let gtZero = [].every(e => e > 0); // any condition
+    let ltZero = [].every(e => e < 0); // any condition
+
+    console.log('gtZero:', gtZero);
+    console.log('ltZero:', ltZero);
+ 
+   </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Topic</title>
+</head>
+<body>
+   
+    <script>
+
+        //* Spread Operator
+        //* include()
+
+
+
+        // Usages of the Spread Operator (...)
+
+         // Expanding Arrays
+         let greet = ["hello", "world"];
+         console.log(greet);
+         console.log(...greet);
+
+         let arr = ["1", "2", "3", "4" , "5"];
+         console.log(arr);
+         console.log(...arr);
+
+         //convert a String into a list of characters
+
+         let char = "chandana";
+         let greeting = [...char]
+         console.log(...greeting);
+
+         //Combining Arrays
+
+         let blog1Subscribers = ['billy@example.com', 'sally@gmail.com'];
+         let blog2Subscribers = ['timmy@gmail.com', 'tammy@example.com', 'tommy@gmail.com'];
+         let subscribers = [...blog1Subscribers,...blog2Subscribers];
+         console.log(subscribers);
+
+        // spread operator inside the Array.push() method 
+
+        let arr1 = ["John", "Sofia", "Bob"];
+        let arr2 = ["Julia", "Sean", "Anthony"];
+        arr1.push(...arr2);
+        console.log(arr1);
+
+        // Copying Arrays and Objects
+
+        let arr3 = ["John", "Sofia", "Bob"];
+        let arr4 = arr3;
+        console.log(arr4);
+        arr3.push("Sally");
+        console.log(arr4);
+         
+        let Arr = ["John", "Sofia", "Bob"];
+        let Arr1 = [...Arr, "chandu", "Sean"];
+        console.log(Arr1);
+
+        // merge billing and shipping information into one
+
+        const billing =  {
+        billingContact : "0987654321", 
+        billingAddress : 'street no 123, xyz city'
+        };
+        const shipping = { 
+        shippingContact: '123456789', 
+        shippingAddress: 'street no 999, abc city'
+        };
+        const custInfo = {...billing, ...shipping};
+        console.log(custInfo);
+
+        const userProvided = {
+            name : 'Chandana Nenavath',
+            email : 'chanduangel111@gmail',
+        };
+        const defaultValues = {
+            name :'unknown',
+            address: 'Alien',
+            phone: null,
+            email: null
+
+        };
+        const userInfo = {...defaultValues, ...userProvided};
+        console.log(userInfo);
+        
+        // String includes() method
+
+        let email = 'chanduangel111@gmail.com';
+        console.log(email.includes('@'));//true
+
+        let str = 'JavaScript String';
+        console.log(str.includes('Script'));// TRUE
+
+        let string = 'JavaScript String'
+        console.log(string.includes('script'));
+
+        // String indexOf()
+
+        // 1.
+
+        let stray = 'finding substrings instring';
+        let index = stray.indexOf('str');
+        console.log(index); // 11
+
+       
+
+        //2. indexOf() and case-sensitivity
+        let cas = 'JS indexOf';
+        let substr = "js";
+        let ind = str.indexOf(substr);
+        console.log(ind); // -1
+
+        // 3. 
+
+    </script>
+</body>
+</html>

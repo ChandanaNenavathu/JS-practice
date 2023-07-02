@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+
+        // let cameraBrand = "Canon";
+        // let cameraPrice = 350000;
+        // let cameraColor = "black";
+
+        let camera = {
+            brand : "canon",
+            price : 35000,
+            color : "black",
+            mfg : 2019,
+        };
+        console.log(camera) 
+
+        // Access the properties of an object
+        console.log(camera.brand);
+        console.log(camera.price);
+        console.log(camera.color);
+        console.log(camera.mfg);
+
+        // Access the non-existing properties
+
+        console.log(camera.megaPixel);// undefined
+
+        //access the properties using dot,[] notation
+
+        console.log(camera.price);
+        console.log(camera['price']);
+
+        // for dynamic peroperties dot,[] notation
+
+        let prop = "color";
+        console.log(camera.prop);//undefines
+        console.log(camera[prop]);
+
+        //  Nested Objects
+
+        let student = {
+            name : "Chandana",
+            age  : 23,
+            course : "Agbsc",
+            address : {
+                street : "ODF",
+                City : "Hyderabad",
+                state : "TS"
+            }
+        };
+ 
+        // Access the nested objects
+
+         console.log(student);
+         console.log(student.address);
+
+        // Access the properties of an object
+
+         console.log(student.address.street);
+
+        //CRUD Operations with an object
+
+        // Create Operation
+
+        let mobile = {};
+        mobile.brand = 'Apple';
+        mobile.color = 'Silver';
+        mobile.price = 25000 ;
+        mobile.isInsured = false;
+        console.log(mobile);
+
+        // READ Operation 
+
+        console.log(mobile.brand);
+
+        // Update Operation
+
+        console.log(mobile.price);
+        mobile.price = 45000;
+        console.log(mobile);
+
+        // Delete Operation
+
+         delete mobile.isInsured;
+         console.log(mobile);
+
+        // 
+
+
+
+    </script>
+</body>
+</html>

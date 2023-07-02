@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+   <script>
+
+    // 1) Using the JavaScript Array unshift() method to prepend an element to an array
+
+    let number = [30,40];
+    const length = number.unshift(20);
+    console.log({length });
+    console.log({number });
+
+    // 2) Using the JavaScript Array unshift() method to prepend multiple elements to an array
+
+    let numbers = [30,40];
+    const lengths = numbers.unshift(10,20);
+    console.log({lengths });
+    console.log({numbers });
+
+    // 3) Using the JavaScript array unshift() to add elements of an array to another array
+
+    let days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+    let weekends = ['Sat','Sun'];
+    for (const weekend of weekends){
+        days.unshift(weekend);
+    };
+    console.log(days);
+
+    // 4) ES6 Operator
+
+    let day = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+    let weekend = ['Sat','Sun'];
+    day.unshift(...weekend);
+    console.log(day);
+
+   </script>
+</body>
+</html>

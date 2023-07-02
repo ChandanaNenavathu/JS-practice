@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex function</title>
+</head>
+<body>
+   
+    <SCRIPT>
+
+        // function with an object as parameter
+
+        let printObject = function(object){
+            console.log(object)
+        };
+        printObject({Name : "Rajan", Age : 35});
+
+        let mobile = {
+            brand : "Apple",
+            price : 35000,
+            color: "silver"
+
+        };
+        printObject(mobile);
+
+        // function with an array as parameter
+
+        // let printArray = function(array){
+        //     let result = "";
+        //     for (let a in array){
+        //         result += `INDEX ${array} => VALUE ${array[index]} \n`;
+        //     }
+        //     console.log(result);
+        // };
+        // printArray ([10,20,30,40]);
+
+        // function inside an object
+
+        let student = {
+            firstName : "Chandana",
+            lastName : "Nenavathu",
+            fullname : function (){
+                return "Chandana Nenavathu";
+            }
+        };
+        console.log(student);
+        console.log(student.firstName);
+        console.log(student.lastName);
+        console.log(student.fullname());
+
+        // BY USING this keyword with function inside an object
+
+        let students = {
+            firstName : "Chandana",
+            lastName : "Nenavathu",
+            fullname : function (){
+                return `${this.firstName} ${this.lastName}`;
+            }
+        };
+        console.log(students);
+        console.log(students.firstName);
+        console.log(students.lastName);
+        console.log(students.fullname());
+
+        // Nested function( function inside a function)
+
+        let outerFn = function() {
+            console.log("Iam an outer Function");
+            let innerFn = function(){
+                console.log("Iam an Inner Function")
+            }
+            innerFn();
+        };
+        outerFn();
+
+        // Twisted function
+
+        let twistedFn = function(){
+            let name = "John";
+            let printStudent = function() {
+                let people = {
+                    NAME : "chandu",
+                    age : 23,
+                    course : "Agbsc",
+                };
+                return people;
+            };
+            return printStudent;
+        };
+        let innerFn = twistedFn();
+        let peopleObj = innerFn();
+        console.log(peopleObj.NAME);
+
+
+    </SCRIPT>
+</body>
+</html>

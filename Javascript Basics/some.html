@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some</title>
+</head>
+<body>
+    JavaScript Array some() method
+   <script>
+
+    let marks = [4, 5, 7, 9, 10, 3];
+    let lessThanFive = false ;
+    for(let index = 0 ;index<marks.length; index++){
+        if(marks[index] < 555){
+            lessThanFive = true;
+            break
+        }
+    }
+    console.log(lessThanFive);
+
+    // same example with function syntac in ES6
+
+    let mark = [4, 5, 7, 9, 10, 3];
+    lessThanFive = mark.some(e => e < 5);
+    console.log(lessThanFive);
+
+    let mar = [4, 5, 7, 9, 10, 3];
+    lessThanFive = mar.some(function(x){
+        return x < 5;
+    })
+    console.log(lessThanFive);
+
+    // 1) Check if an element exists in the array
+  
+    function exists(value,array){
+        return array.some(y => y === value);
+    }
+    let score = [4, 5, 7, 9, 10, 2];
+    console.log(exists(4,score));
+    console.log(exists(11,score));
+
+
+    function toArray() {
+  return Array.prototype.slice.call(arguments);
+}
+
+var classification = toArray('A','B','C');
+
+console.log(classification); // ["A", "B", "C"]
+
+
+function isInRange(value) {
+    if (typeof value !== 'number') {
+        return false;
+    }
+    return value >= this.lower && value <= this.upper;
+}
+
+let data = [10, 20, "30", 1, 5, 'JavaScript filter', undefined, 'example'];
+
+let range = {
+    lower: 1,
+    upper: 10
+};
+
+let numberInRange = data.filter(isInRange, range);
+
+console.log(numberInRange); // [10, 1, 5]
+
+
+let numbers = [0, 1 , 2, 3, 10, 20, 30 ];
+numbers.sort( function( a , b){
+    if(a > b) return 1;
+    if(a < b) return -1;
+    return 0;
+});
+
+console.log(numbers);
+
+
+ 
+
+   </script>
+</body>
+</html>

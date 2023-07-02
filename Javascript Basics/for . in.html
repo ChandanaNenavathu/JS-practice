@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for ...in loop</title>
+</head>
+<body>
+   <script>
+
+    // JavaScript for...in loop
+
+        let person = {
+            firstName :'Jo hn',
+            lastName : 'Doe',
+            ssn : '229-24-2351'
+        };
+        for(let prop in person) {
+            console.log(prop + ':'+ person[prop]);
+        }
+
+        // for..in loop and Inheritance 
+
+        let decoration = {
+            color : 'red'
+        };
+        let circle = Object.create(decoration);
+        circle.radius = 10;
+        for(const prop in circle) {
+            console.log(prop)
+        }
+
+        // The for...in loop and Array
+
+        const items = [10, 20, 30];
+        let total = 0;
+        for (const item in items) {
+            total += items[item];
+        }
+        console.log(total);
+
+        // Objects.keys() method
+
+        const persons = {
+            firstName: 'John',
+            lastName: 'Doe'
+        };
+
+        persons.age = 25;
+
+        for (const key in persons) {
+            console.log(key);
+        }
+        
+
+   </script>
+</body>
+</html>

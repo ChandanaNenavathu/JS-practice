@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+   <script>
+//---------------------------------------Functions properties-----------------------------------------------------------------------
+
+
+    function add (x, y){
+        return x + y;
+    }
+    console.log(add.length);
+    console.log(add.prototype);
+
+//-----------------------------------------new.target-----------------------------------------------------------
+
+    let result = add(10,20);
+    console.log(result);
+// Also we can call a function with 'new' keyword as a constructor:
+    let obj = new add(10,20)
+
+//-----------------------------------------The apply() and call() methods----------------------------------------------------------------------------
+
+    let cat = {type: 'cat' , sound: 'Meow'};
+    let dog = {type: 'Dog', sound: 'Woof'};
+    const say = function (message){
+        console.log(message);
+        console.log(this.type + ' says ' + this.sound);
+    };
+    say.apply(cat, ['What does a cat say ?']);
+    say.apply(dog, ['What does a dog say ?']);
+
+//--------------------------------bind() method-----------------------------------------------------
+
+
+    let car = {
+        speed: 5,
+        start: function(){
+            console.log('start with' + this.speed + 'km/hr')
+        }
+    };
+    let aircraft = {
+        speed: 10,
+        fly: function(){
+            console.log('Flying');
+        }
+    };
+    let taxiing = car.start.bind(aircraft);
+    taxiing();
+    car.start.call(aircraft);
+
+// ---------------------------------------------JavaScript call() method----------------------------------------------------------------
+
+function add (x , y){
+    return x + y;
+}
+let results = add.call(this, 10 , 20);
+console.log(results);
+console.log(add instanceof Function);
+
+/*------------------------------------------------------------------*/
+
+var greeting = 'Hi';
+var messenger = {
+    greeting : "hello"
+}
+function ay(name){
+    console.log(this.greeting + " " + name);
+}
+
+//-----------------------------------Using the JavaScript call() method to chain constructors for an object-------------------------------------------------
+
+
+function Box(height, width){
+    this.height = height;
+    this.width = width;
+}
+function Widget(height, width, color){
+    Box.call(this,height, width);
+    this.color = color;
+}
+let widget = new Widget(100 , 200, "red")
+console.log(widget);
+
+// ----------------------Using the JavaScript call() method for function borrowing--------------------
+
+const cars = {
+    name:'car',
+    start() {
+        console.log('start the' + ' ' + this.name);
+    },
+    speedUp() {
+        console.log('Speed up the' + ' ' + this.name)
+    },
+    stop() {
+        console.log('stop the ' + ' ' + this.name)
+    }
+};
+    const aircrafts = {
+        name: 'aircrafts',
+        fly() {
+            console.log('Fly');
+        },
+    };
+    cars.start.call(aircrafts);
+    cars.speedUp.call(aircrafts)
+    aircrafts.fly();
+
+    //-------------------------------------------------------
+
+    function isOdd(number){
+        return number % 2;
+    }
+    function getOddNumber(){
+        return Array.prototype.filter.call(arguments, isOdd);
+    }
+    let resultss = getOddNumber(10,1,3,4,8,9,5);
+    console.log(resultss);
+
+    //--------------JavaScript apply() method examples--------------------------------------
+
+    // -------------------------Simple JavaScript apply() method example------------------
+
+    const per = {
+        firstName : 'John',
+        lastName  : 'Doe'
+    }
+    function greet(greeting, message){
+        return `${greeting} ${this.firstName}.${message}`;
+    }
+    let final = greet.apply(per, ['Hello' , ' How are you?']);
+    console.log(final);
+
+    //-------------------------------Function borrowing------------------------
+
+    const computer = {
+        name : 'MacBook',
+        isOn : false,
+        turnOn() {
+            this.isOn = true;
+            return `The ${this.name} is on`;
+        },
+        turnOff() {
+            this.isOn = false;
+            return ` The ${this.name} is off`;
+        }
+    };
+    const server = {
+        name : 'Dell PowerEdge T30',
+        isOn : false
+    };
+    let output = computer.turnOn.apply(server);
+    console.log(output);
+    let outputs = computer.turnOff.apply(server);
+    console.log(outputs);
+
+    //---------------------------------Using the apply() method to append an array to another-----------------
+
+    let arr = [1,2,3,4];
+    let num = [5,6,7,8];
+    arr.push.apply(arr,num);
+    console.log(arr);
+
+    //-------------------------------------------------Introduction to JavaScript bind() method-------------------------------------
+
+    let person = {
+        name : 'Jenny',
+        getName: function() {
+            console.log(this.name);
+        }
+    };
+    let f = person.getName.bind(person);
+    setTimeout(f, 1000);
+
+    //-----------------------------Using bind() to borrow methods from a different object--------------------------------------------------------
+
+    let runner = {
+        name : 'Runner',
+        run : function (speed) {
+            console.log(this.name + ' runs at ' + speed + ' mph ')
+        }
+    };
+    let flyer = {
+        name : 'Flyer',
+        fly : function(speed) {
+            console.log(this.name + ' flies at ' + speed + ' mph')
+        }
+    };
+    let run = runner.run.bind(flyer, 25);
+    run();
+
+    //----------------------call()-------------------------------------------------
+
+    function test(arg1, arg2){
+            console.log(this.num, arg1, arg2); // 100, 10, 20
+    }
+
+    test.call({num: 100}, 10, 20);
+
+    //----------------------call and apply------------------------------------------------
+
+    let name = {
+        firstname : 'chandana',
+        lastname : 'nenavathu',
+    }   
+    let printFullName = function(hometown, state){
+            console.log(`${this.firstname} ${this.lastname} from ${hometown} ${state}`)
+
+        }
+    printFullName.call(name, 'Hyderabad', 'Telanagana');
+    printFullName.apply(name,['Hyderabad', 'Telanagana'])
+
+    let name2 = {
+        firstname : 'sachin',
+        lastname : 'Tendulkar',
+    }
+    
+    // function borrowing
+
+    printFullName.call(name2, 'Medak', 'Telanagana');
+    printFullName.apply(name2, ['Medak', 'Telanagana']);
+
+//-----------------------------bind-----------------------------------------
+
+let print = printFullName.bind(name2,'Hyderabad', 'Telanagana');
+console.log(print);
+print();
+
+//---------------------------------polyfill--------------------------------------------------------
+
+let name3 = {
+    firstName : "chandu",
+    lastName : "Chandana"
+}
+let finals = function(){
+    console.log(`${this.firstName} ${this.lastName}`)
+}
+let finalsName = finals.bind(name3);
+finalsName();
+Function.prototype.mybind = function(...args){
+    let obj = this
+    return function () {
+        obj.call(args[0]);
+    }
+}
+let finalsName2 = finals.mybind(name3);
+finalsName2();
+   </script>
+</body>
+</html>

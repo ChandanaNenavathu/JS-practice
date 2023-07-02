@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+   <script>
+
+    //---------------------------Using callbacks to deal with an asynchronous operation-----------------------------------------------------
+
+
+        function getUsers(callback) {
+           setTimeout(() => {
+                callback([
+                    {username : 'John', email: 'john@test.com'},
+                    {username : 'jane', email: 'jane@test.com'}
+                ])
+           },1000);
+        }
+        function findUser(username, callback) {
+            getUsers((users) => {
+                const user = users.find((user) => user.username === username);
+                callback(user)
+            });
+        }
+        findUser('John', console.log);
+
+
+        //-------------------promise concept with callbacks------------------------------------
+
+        let doTask = (success, failure)=> {
+            // doing the task
+            let isDone = true;
+            if(isDone) {
+                success('Task is done')
+            }
+            else{
+                failure('Task is Not Done')
+            }
+        };
+        doTask((message) => {
+            console.log(message);
+        }, (message) => {
+            console.log(message);
+        });
+
+        // Actual Promise Creation
+
+        let cleanCamera = new Promise((resolve, reject) => {
+            //cleaning camera
+            let isDone = true;
+            if (isDone) {
+                resolve('cleaning is done');
+            }else{
+                reject('cleaning is not done')
+            }
+            let isNotDone = false;
+            if(isNotDone) {
+                resolve('Cleaning is done')
+            }else{
+                reject('cleaning is not done')
+            }
+
+        });
+        cleanCamera.then((message) =>{
+            console.log(message)
+        }).catch((error) => {
+            console.error(error)
+        });
+        
+        // Dependent promise 
+
+        /* -> build project
+            -> attendTechnicalRound
+                -> attendManagerRound
+                    -> attendHRRound 
+                      change true and false so tht we get result differently
+                    */
+
+        let buildProject = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                let isDone = true;
+            if(isDone) {
+                resolve('Project is Finished')
+            }else {
+                reject('Project is not Finished')
+            }
+            }, 1000);
+        });
+        let attendTechnicalRound = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                let isDone = true;
+            if(isDone) {
+                resolve('TechnicalRound is Finished')
+            }else {
+                reject('TechnicalRound is not Finished')
+            }
+            }, 2000);
+        });
+        let attendManagerRound = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                let isDone = true;
+            if(isDone) {
+                resolve('ManagerRound is Finished')
+            }else {
+                reject('ManagerRound is not Finished')
+            }
+            }, 3000);
+        });
+        let attendHRRound = new Promise((resolve, reject) => {
+           setTimeout(() => {
+            let isDone = true; 
+            if(isDone) {
+                resolve('HRRound is Finished and got Job')
+            }else {
+                reject('HRRound is not Finished')
+            }
+           }, 4000);
+        }); 
+        buildProject.then((message) => {
+            let result = `${message} -> `;
+            console.log(result);
+            attendTechnicalRound.then((message) =>{
+                result += `${message} -> `
+                console.log(message);
+                 attendManagerRound.then((message) =>{
+                    result += `${message} -> `
+                    console.log(message);
+                     attendHRRound.then((message) => {
+                        result += `${message}`
+                        console.log(message);
+                        //console.log(result);
+                    }).catch((error) => {
+                        console.error(err);
+                    });
+                }).catch(() => {
+                    console.error(err);
+                });
+            }).catch(() => {
+                console.error(err);
+            });
+        }).catch(() => {
+            console.error(err);
+        });
+
+        // Resolved promises example
+
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('The First Promise has Resolved')
+                resolve(10);
+            }, 5000)
+        });
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('The Second Promise has Resolved')
+                resolve(20);
+            }, 6000)
+        });
+        const p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('The Third Promise has Resolved')
+                resolve(20);
+            }, 7000)
+        });
+        Promise.all([p1, p2, p3]).then((results) => {
+            const total = results.reduce((p,c) => p+c) 
+            console.log(`Results : ${results}`);
+            console.log(`Results : ${total}`);
+
+        });
+
+        // Rejected promises example
+
+        const c1 = new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                console.log('First Promise has resolved')
+                resolve(40);
+            }, 8000)
+        });
+        const c2 = new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Second Promise has rejected')
+                reject('Failed');
+            }, 9000)
+        });
+        const c3 = new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Third Promise has rejected')
+                resolve(50);
+            }, 9000)
+        });
+
+        Promise.all([c1, c2, c3])
+        .then(console.log)
+        .catch(console.log)
+        
+        // simple Promise.race() 
+
+        const pro = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Finally resolved');
+                resolev(44);
+            }, 6600);
+        });
+        const pro1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Finally resolved');
+                resolev(49);
+            }, 6900);
+        });
+        Promise.race([pro, pro1])
+        .then(value => console.log(`Resolved :${value}`))
+        .catch(reason => console.log(`Rejected :{reason}`));
+   </script>
+</body>
+</html>
+

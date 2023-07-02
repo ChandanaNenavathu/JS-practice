@@ -1,0 +1,10 @@
+1. addition of 2 nummbers.
+2. multiplication Table 7.
+3. how to find length of an array.
+4. how to remove element from an array.
+5. how to add one element to an array.
+6. how to find big element in an array.
+7. how to find small element in an array.
+8. how to sort ascending order desending order of an array.
+9. how to filter even numbers/ odd numbers from an array.
+10. how to add new element at the starting of the array.

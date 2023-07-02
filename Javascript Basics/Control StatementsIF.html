@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Statements</title>
+</head>
+<body>
+<!--     
+    JavaScript  Control Statements also known as Control Structures or Flow Control statements are statements which decide the execution flow of the program. Typically the program execution begins from the first line in the to the last line of that JS code. However, in between this the flow of the execution can be branched(based on some condtion) or re-iterated(loops) based on some criterias. This the functionality that is provided by Control Statements in JavaScript.
+    They are mainly categorized in 2 types 
+    Conditional Control Statements
+    Whenever a condition is to be tested depending on which particular tasks are to be performed, Conditional control statements are used.
+    Looping / Iterative Control Statements
+    Whenever a particular task has to be iterated for a particular number of times or depending on some condition, Looping control statements are used. -->
+
+    <script type="text/javascript">
+    //    1. FIND WHETHER NUMBER IS EVEN OR ODD
+
+     document.write("<h1>If - else else control Statements</h1>")
+     let x = 6;
+     if (x%7==0) {
+        document.write("<h3>Even Number</h3>");
+     } else {
+        document.write("<h3>Odd Number</h3>");
+      }
+
+       //2. FIND IF A NUMBER IS POSITIVE, NEGATIVE, 0
+ 
+     let y = 0;
+     if(y>0) {// nested if else
+       document.write("<h3>Postive Number</h3>");
+     } else if (y<0) {//There is nothing special about this code. It is just a series of if statements, where each if is a part of the else clause of the previous statement. Statement(s) are executed based on the true condition, if none of the conditions is true, then the else block is executed.
+       document.write("<h3>Neither positive nor negative</h3>");
+     } else {
+      document.write("<h3>Negative Number</h3>");
+     } 
+   var book = "maths";
+            if( book == "history" ) {
+               document.write("<b>History Book</b>");
+            } else if( book == "maths" ) {
+               document.write("<b>Maths Book</b>");
+            } else if( book == "economics" ) {
+               document.write("<b>Economics Book</b>");
+            } else {
+               document.write("<b>Unknown Book</b>");
+            }
+         let z = 5;
+         if(z>0) {
+         document.write("<h3>Postive Number</h3>");
+         } if (z%2==0) {
+         document.write("<h3>Even Number</h3>");
+         } else {
+         document.write("<h3>Number is Positive but it is odd</h3>");
+         }
+      // FIND NUMBER IS POSITIVE AND EVEN
+      let A = 4;
+      if(A>0 && A%2==0) {
+         document.write("<h3>Even And Postive Number</h3>");
+      }
+      
+    </script>
+
+</body>
+</html>

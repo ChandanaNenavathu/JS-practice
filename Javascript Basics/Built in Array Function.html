@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Built in Array Functions</title>
+</head>
+<body>
+   <script>
+
+    //FUNCTION OF ARRAYS
+
+    // shift()-> Removes first element from array
+
+    let technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    console.log(technologies.shift());
+    console.log(technologies);
+
+    // unshift()-> add first element from array
+
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    technologies.unshift("nodeJs");
+    console.log(technologies);
+
+    // push() -> add last element from array
+
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    technologies.push("nodeJs");
+    console.log(technologies);
+
+    // pop() -> Removes last element from array
+
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    technologies.pop();
+    console.log(technologies);
+
+    // sort -> to sort the array in accending order
+    technologies = ["html", "css", "javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    technologies.sort();
+    console.log(technologies);
+
+    // reverse -> to reverse the array elements
+
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    technologies.reverse();
+    console.log(technologies);
+
+    // reverse order of array elements ( decending order)
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    technologies.sort().reverse();
+    console.log(technologies);
+
+    //splice(index) -> to remove all the elements in given index
+
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    technologies.splice(2);
+    console.log(technologies);
+
+    //splice(index,no.of elements removed) -> to remove given elements in given index
+
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    technologies.splice(2,2);
+    console.log(technologies);
+
+    
+    //splice(index,1, replace elements) -> to replaces the given elements in given index
+
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    technologies.splice(4,1,"nodeJS");
+    console.log(technologies);
+
+    // join() -> to join the array elements to string
+
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(technologies);
+    let techString = technologies.join(' - ');
+    console.log(techString);
+
+    // split() -> to join the string elements to array
+
+    technologies = ["html", "css", "Javascript", "bootstrap","jquery"];
+    console.log(techString);
+    let newString = techString.split("-");
+    console.log(newString);
+
+    // forEach() function
+
+    const items = [12, 24, 36];
+        const copy = [];
+  
+        items.forEach(function (item) {
+            copy.push(item);
+        });
+        console.log(copy);
+
+    
+
+
+   </script>
+</body>
+</html>

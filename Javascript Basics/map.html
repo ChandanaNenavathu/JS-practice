@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+   <script>
+    
+    let circles = [10,20,30];
+    let areas = [];// to store areas of circle
+    let area = 0;
+    for(let i = 0;i<circles.length;i++){
+        area=Math.floor(Math.PI*circles[i]*circles[i]);
+        areas.push(area);
+    };
+    console.log(areas);
+
+    // or with function
+
+    function circleArea(radius){
+        return Math.floor(Math.PI*radius*radius);
+    }
+    let are = circles.map(circleArea);
+    console.log(are);
+
+    // with ES6
+    let circle = [10,20,30];
+    let numbers = circle.map(radius=> Math.floor(Math.PI*radius*radius));
+    console.log(numbers);
+
+    // built-in method of the Math
+
+    const number = [16, 25, 36];
+    let results = number.map(Math.sqrt);
+    console.log(results);
+
+    // Extracting values from an array of objects
+
+    const girls = [
+        {name:'Sarah', age:19},
+        {name:'Laura', age:10},
+        {name:'jessy', age:29},
+        {name:'Amy', age:23}];
+        let girlsAges = girls.map((girl)=>girl.age);
+        let girlsName = girls.map((girl)=>girl.name);
+        let girls123 = girls.map((girl)=>girl.age>20);
+
+
+        console.log(girlsAges);
+        console.log(girlsName);
+        console.log(girls123);
+        
+    // Make an array of numbers that are doubles of the first array
+
+    // function doubleNumbers(arr){
+    //     return arr.map(n => n*2);
+    // }
+
+    // console.log(doubleNumbers([2, 5, 100])); // [4, 10, 200]
+
+    function stringItUp(arr){
+      return arr.map(y => y.toString())
+    }
+
+    console.log(stringItUp([2, 5, 100])); // ["2", "5", "100"]
+
+    function capitalizeNames(arr){
+        return arr.map(z => z.toUpperCase())
+    }
+
+    console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"])); // ["John", "Jacob", "Jingleheimer", "Schmidt"]
+
+
+    function namesOnly(arr){
+        return arr.map(a => a.name)
+    }
+
+    console.log(namesOnly([
+    {
+        name: "Angelina Jolie",
+        age: 80
+    },
+    {
+        name: "Eric Jones",
+        age: 2
+    },
+    {
+        name: "Paris Hilton",
+        age: 5
+    },
+    {
+        name: "Kayne West",
+        age: 16
+    },
+    {
+        name: "Bob Ziroll",
+        age: 100
+    }
+    ])); 
+    // ["Angelina Jolie", "Eric Jones", "Paris Hilton", "Kayne West", "Bob Ziroll"]
+
+    function readyToPutInTheDOM(arr){
+        arr.map(c=> {
+     document.write("<h1>" + c.name + "</h1>");
+     document.write("<h2>" + c.age+ "</h2>");
+  });
+    }
+    console.log(readyToPutInTheDOM([
+    {
+        name: "Angelina Jolie",
+        age: 80
+    },
+    {
+        name: "Eric Jones",
+        age: 2
+    },
+    {
+        name: "Paris Hilton",
+        age: 5
+    },
+    {
+        name: "Kayne West",
+        age: 16
+    },
+    {
+        name: "Bob Ziroll",
+        age: 100
+    }
+    ])); 
+
+   
+   </script>
+</body>
+</html>

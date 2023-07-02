@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Questions</title>
+</head>
+<body>
+   <script>
+
+    // 1. create array of stings ['a', 'b', 'a'] [1,2,4,3,2]----> remove duplicated from array.(filter)
+
+    // A. Remove duplicates from an array using a Set
+
+    const chars = ["1", "5", "2", "2", "2", "3", "1", "2", "2", "1"];
+    const uniqueChars = [...new Set(chars)];
+    console.log(uniqueChars);
+
+    // B. Remove duplicates from an array using indexOf()
+
+    let str = 'finding substrings instring';
+    let index = str.indexOf('ng');
+    console.log(index);
+
+    // Using indexOf() to count occurrences of a substring in a string
+
+    let char = ["1", "5", "2", "2", "2", "3", "1", "2", "2", "1"];
+    let arr = char.indexOf('2');
+    console.log(arr);
+
+    // // let charss = ['A', 'B', 'A', 'C', 'B']; USING indexof()
+
+    // chand.forEach((x, index) => {
+    // console.log(`${x} - ${index} - ${chand.indexOf(x)}`);
+    // });
+
+    // filter normal method
+
+    let alpha = ['A', 'B', 'A', 'C', 'B'];
+
+    let uniqueAlpha  = alpha.filter((X, index) => {
+    return alpha.indexOf(X) === index;
+    });
+
+    console.log(uniqueAlpha);
+
+    // C. To find the duplicate values, you need to reverse the condition: 
+
+    let app = ['A', 'B', 'A', 'C', 'B'];
+
+    let dupApp = app.filter((x, index) => {
+    return app.indexOf(x) !== index;
+    });
+
+    console.log(dupApp);
+
+    // D. Remove duplicates from an array using forEach() and include()
+
+    const Car = ['A', 'B', 'C', 'D' , 'A', 'C'];
+    const uniqueCar = [];
+    Car.forEach((x) => {
+        if(!uniqueCar.includes(x)) {
+            uniqueCar.push(x);
+        }
+    
+    })
+    console.log(uniqueCar);
+
+    // Remove duplicates from an array of objects by one property
+
+    const members = [
+        {id:1, name: 'John'},
+        {id:2, name:"jane"},
+        {id:1, name:'johnny'},
+        {id:4, name:'jane'},
+    ];
+    const unique = [...new Map(members.map((x) => 
+        [x.name, x])).values()];
+    console.log(unique);
+
+    // 2. add 5 to all the elements in the array.(map)
+    // 3. [4,64,5,3,6,6,4,9,2,8] find the smallest even number.(filter)
+
+    // using Math.min
+
+    const math = [4,64,5,3,6,6,4,9,2,8];
+    const min = Math.min(...math)
+    console.log(min);// 2
+
+    // const no = [4,64,5,3,6,6,4,9,2,8];
+    // const number = Math.max(...no)
+    // console.log(number);//64
+
+    // const Number = [4,64,5,3,6,6,4,9,2,8];
+    // const even = Number.filter(number =>{
+    //     return number % 2 === 0;
+    // })
+    // console.log(even);
+
+    // 4. [5,6,3,5,,,6,6,6,6,6] find the numbers which are divisble by 3.(filter)
+
+        const small = [5,6,3,5,21,2,6,24,66,55,32,14];
+        const fill = small.filter(number=>{
+            return number % 3 === 0;
+        })
+        console.log(fill);
+
+    // 5. [121, 4, 9, 64] sqrt of number.
+
+    const data = [121, 4, 9, 64];
+    const nos = data.map(Math.sqrt);
+    console.log(nos);
+
+    // 6. ['hello', 'chalo', 'bolo', 'apple', 'apply', 'append'] sort.
+
+    //type 1 :
+
+    const names = ['hello', 'chalo', 'bolo', 'apple', 'apply', 'append']
+    const name = names.sort();
+    console.log(name);
+
+    // type 2:
+
+    const sin = ['hello', 'chalo', 'bolo', 'apple', 'apply', 'append'];
+    sin.sort(function(a,b){
+        if (a>b)return 1;
+        if (a<b)return -1;
+        return 0;
+    });
+    console.log(sin);
+
+    // type 3 : arrow function
+
+    const con = ['hello', 'chalo', 'bolo', 'apple', 'apply', 'append'];
+    con.sort((a,b) => {
+        if (a>b)return 1;
+        if (a<b)return -1;
+        return 0;
+    });
+    console.log(con);
+
+    //type 4 :
+
+    const four = ['hello', 'chalo', 'bolo', 'apple', 'apply', 'append'];
+    four.sort((a,b) => a-b);
+    console.log(four);
+
+    let x = 10;
+    console.log(x.toString(16)); // "a"
+    
+
+
+   </script>
+</body>
+</html>
